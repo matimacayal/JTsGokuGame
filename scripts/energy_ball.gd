@@ -18,7 +18,7 @@ func _physics_process(delta):
 	position += direction * SPEED * delta
 
 	travelled_distance += SPEED * delta
-	print("moving energy ball, travelled distance: " + str(travelled_distance))
+	#print("moving energy ball, travelled distance: " + str(travelled_distance))
 	if travelled_distance > RANGE:
 		queue_free()
 
