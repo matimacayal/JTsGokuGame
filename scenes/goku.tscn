@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://mbsfww3duigb"]
 
-[ext_resource type="Script" path="res://scenes/goku.gd" id="1_ine4x"]
+[ext_resource type="Script" path="res://scripts/goku.gd" id="1_ine4x"]
 [ext_resource type="Texture2D" uid="uid://bn0pr72ygatnq" path="res://assets/sprites/goku-blue_sprites_v4.png" id="2_fw4ls"]
 [ext_resource type="Script" path="res://scripts/hitbox.gd" id="3_bfq41"]
 
