@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var current_animation
 var attacking
-
+var jump_counter = 0
 
 func _physics_process(delta):
 	if attacking:
@@ -22,10 +22,15 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	else:
+		jump_counter = 0
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump"): # and is_on_floor():
+		if jump_counter < 2:
+			velocity.y = JUMP_VELOCITY
+			jump_counter +=1
+			print("jump_counter: " + str(jump_counter))
 	
 	if Input.is_action_just_pressed("punch") and is_on_floor():
 		attacking = true
