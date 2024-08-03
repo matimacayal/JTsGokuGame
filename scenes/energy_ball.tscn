@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://woubi5gcr3ea"]
+
+[ext_resource type="Script" path="res://scripts/energy_ball.gd" id="1_y02nd"]
+[ext_resource type="Texture2D" uid="uid://dg8r8esneilna" path="res://assets/sprites/goku-blue_sprites_v3_contraste.png" id="2_jv4s1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6uppu"]
+radius = 6.0
+
+[node name="EnergyBall" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_y02nd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, -2)
+texture = ExtResource("2_jv4s1")
+hframes = 14
+vframes = 5
+frame = 58
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6uppu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
